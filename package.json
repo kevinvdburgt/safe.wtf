@@ -1,0 +1,45 @@
+{
+  "name": "safe.wtf",
+  "version": "1.0.0",
+  "description": "A modern self-hosted file upload service",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinvdburgt/safe.wtf.git"
+  },
+  "keywords": [
+    "sefl-hosted",
+    "upload",
+    "file"
+  ],
+  "author": "Kevin van der Burgt <mail@kevinvdburgt.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinvdburgt/safe.wtf/issues"
+  },
+  "homepage": "https://github.com/kevinvdburgt/safe.wtf#readme",
+  "dependencies": {
+    "bulma": "^0.6.0",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.5",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
