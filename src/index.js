@@ -1,11 +1,16 @@
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
+import knex from 'knex';
 import routes from './app/routes';
+import knexconfig from './config/knex';
 
 const port = process.env.PORT || 7000;
 
 const app = express();
+
+// Check for database migrations on startup and execute them
+knex(knexconfig).migrate.latest();
 
 // Setup serving static files
 app.use(express.static(path.join(__dirname, '..', 'public')));
