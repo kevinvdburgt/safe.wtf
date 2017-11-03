@@ -4,7 +4,8 @@ import upload from './controllers/upload';
 
 const router = Router();
 
-router.get('/', page.home);
+router.get('/', page.splash);
+router.get('/home', page.home);
 
 router.post('/api/upload', upload.upload);
 

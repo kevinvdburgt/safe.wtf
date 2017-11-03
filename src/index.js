@@ -14,6 +14,7 @@ knex(knexconfig).migrate.latest();
 
 // Setup serving static files
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'uploads')));
 
 // Setup pug as the templating engine
 app.set('view engine', 'pug');

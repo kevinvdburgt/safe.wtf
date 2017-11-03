@@ -1,4 +1,33 @@
 extends ../template/default
   
 block content
-  | Hi there!
+  section.hero.is-fullheight.is-gray.is-bold
+    div.hero-body
+      div.container.has-text-centered
+        form(method='post' action='/api/upload' enctype='multipart/form-data')
+          button.button.is-dark.is-outlined.js-upload-button(type='button') Select or drop file(s)
+          input.js-upload-input(type='file' name='files[]' multiple data-max-size='100MiB')
+          input(type='submit' value='Submit')
+        |<ul id="upload-filelist"></ul>
+
+
+//- <form id="upload-form" enctype="multipart/form-data" method="post" action="upload.php?output=html">
+//- 	<button id="upload-btn" class="btn" type="button">Select or drop file(s)</button>
+//- 	<input type="file" id="upload-input" name="files[]" multiple data-max-size="{{max_upload_size}}MiB">
+//- 	<input type="submit" value="Submit">
+//- </form> 
+//- <ul id="upload-filelist"></ul>
+
+
+//- #upload-btn {
+//-   display: none;
+//- }
+//- .js #upload-input {
+//-   display: none;
+//- }
+//- .js input[type="submit"]{
+//-   display: none;
+//- }
+//- .js #upload-btn {
+//-   display: inline-block !important;
+//- }
