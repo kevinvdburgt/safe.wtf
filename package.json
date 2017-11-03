@@ -4,7 +4,10 @@
   "description": "A modern self-hosted file upload service",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/index.js",
+    "watch": "nodemon --exec babel-node --watch src/ -- src/index.js",
+    "webpack:watch": "./node_modules/.bin/webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -23,7 +26,9 @@
   "homepage": "https://github.com/kevinvdburgt/safe.wtf#readme",
   "dependencies": {
     "bulma": "^0.6.0",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
