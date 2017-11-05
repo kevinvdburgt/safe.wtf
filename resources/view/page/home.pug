@@ -1,33 +1,21 @@
 extends ../template/default
   
 block content
-  section.hero.is-fullheight.is-gray.is-bold
+  section.hero.is-fullheight.is-info.is-bold
     div.hero-body
       div.container.has-text-centered
+        h1.title Safe.wtf
+        h2.subtitle A modern self-hosted file upload service.
+
         form(method='post' action='/api/upload' enctype='multipart/form-data')
-          button.button.is-dark.is-outlined.js-upload-button(type='button') Select or drop file(s)
-          input.js-upload-input(type='file' name='files[]' multiple data-max-size='100MiB')
+          button.button.is-white.is-outlined.js-upload-button(type='button') Upload
+          input.js-upload-input(type='file' name='files[]')
           input(type='submit' value='Submit')
-        |<ul id="upload-filelist"></ul>
+        
+        ul.js-upload-filelist
+  
+    div.hero-foot
+      div.container.has-text-centered
+        a(href='https://github.com/kevinvdburgt/safe.wtf' target='_blank') View on GitHub
 
-
-//- <form id="upload-form" enctype="multipart/form-data" method="post" action="upload.php?output=html">
-//- 	<button id="upload-btn" class="btn" type="button">Select or drop file(s)</button>
-//- 	<input type="file" id="upload-input" name="files[]" multiple data-max-size="{{max_upload_size}}MiB">
-//- 	<input type="submit" value="Submit">
-//- </form> 
-//- <ul id="upload-filelist"></ul>
-
-
-//- #upload-btn {
-//-   display: none;
-//- }
-//- .js #upload-input {
-//-   display: none;
-//- }
-//- .js input[type="submit"]{
-//-   display: none;
-//- }
-//- .js #upload-btn {
-//-   display: inline-block !important;
-//- }
+        

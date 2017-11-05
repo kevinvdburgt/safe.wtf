@@ -3,3 +3,4 @@ public/dist/
 src/database/db.sqlite
 uploads/*
 !uploads/.gitkeep
+bin/

@@ -4,6 +4,20 @@
 // Load the bulma framework
 @import ~bulma/bulma
 
+.hero-foot
+  font-size: 14px
+
 input[type='submit'],
 input[type='file']
   display: none
+
+.button-progress
+  &::before
+    background-color: rgba(255, 255, 255, .3)
+    content: attr(data-progress) '';
+    width: attr(data-progress) '%'
+    height: 100%
+    left: 0
+    position: absolute;
+    display: inline-block;
+    transition: width .3s;

@@ -1,7 +1,9 @@
+import 'babel-polyfill';
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
 import knex from 'knex';
+import bodyParser from 'body-parser';
 import routes from './app/routes';
 import knexconfig from './config/knex';
 
@@ -19,6 +21,12 @@ app.use(express.static(path.join(__dirname, '..', 'uploads')));
 // Setup pug as the templating engine
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '..', 'resources', 'view'));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // Setup morgan for logging HTTP requests
 app.use(morgan('tiny'));

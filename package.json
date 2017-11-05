@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bin/index.js",
     "watch": "nodemon --exec babel-node --watch src/ -- src/index.js",
-    "webpack:watch": "./node_modules/.bin/webpack --watch"
+    "webpack:watch": "./node_modules/.bin/webpack --watch",
+    "clean": "./node_modules/.bin/rimraf bin/ && ./node_modules/.bin/rimraf public/dist/ && ./node_modules/.bin/rimraf uploads/* && touch uploads/.gitkeep",
+    "build": "npm run clean && ./node_modules/.bin/webpack -p && ./node_modules/.bin/babel src --out-dir bin",
+    "docker:release": "npm run build && docker build -t kevinvdburgt/safe.wtf . && docker push kevinvdburgt/safe.wtf"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,9 @@
   },
   "homepage": "https://github.com/kevinvdburgt/safe.wtf#readme",
   "dependencies": {
+    "axios": "^0.17.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
     "bulma": "^0.6.0",
     "express": "^4.16.2",
     "knex": "^0.13.0",
